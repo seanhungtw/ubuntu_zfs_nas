@@ -33,10 +33,11 @@ a note to build a nas on ubuntu
       zfs get compressratio raid1
 
       #check hdd & file system (you should do it often weekly or mounthly)
-      sudo zfs get dedup pool1
+      zpool scrub raid1
 
       #disable dedup ( default is off, actually )
-      zfs set dedup=off pool1
+       zfs get dedup pool1
+      sudo zfs set dedup=off pool1
 
       #check zpool status
       zpool iostat -v
